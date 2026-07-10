@@ -87,6 +87,13 @@ export default function RootLayout({
               >
                 Terms
               </Link>
+              <Link
+                href="/delete-account"
+                className="font-display text-xs uppercase tracking-[0.22em] transition-colors hover:text-white"
+                style={{ color: "rgba(255,255,255,0.28)" }}
+              >
+                Delete Account
+              </Link>
             </div>
           </div>
         </footer>
