@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm mb-12" style={{ color: "#4f5d72" }}>
-          Last updated: May 2026
+          Last updated: August 2026
         </p>
 
         <div className="flex flex-col gap-10" style={{ color: "#16150e" }}>
@@ -84,9 +84,8 @@ export default function PrivacyPage() {
               5. Third Parties
             </h2>
             <p className="text-sm leading-relaxed">
-              We use Supabase (EU) for infrastructure, Expo for push
-              notifications, and Sentry (US) for error reporting. We do not sell
-              your data.
+              We use Supabase (EU) for infrastructure and Expo for push
+              notifications. We do not sell your data.
             </p>
           </section>
 

@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Mulle · Golf Scoring",
   description:
-    "Track rounds, compete in tours, and play side games with friends.",
+    "Track rounds, compete in tours, and play with friends.",
 };
 
 export default function RootLayout({

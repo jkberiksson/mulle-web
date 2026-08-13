@@ -58,27 +58,21 @@ function TrophyIcon() {
   );
 }
 
-function CardsIcon() {
+function FriendsIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <rect x="3" y="8" width="16" height="18" stroke="currentColor" strokeWidth="1.5" />
-      <rect x="9" y="3" width="16" height="18" stroke="currentColor" strokeWidth="1.5" />
-      <line
-        x1="13"
-        y1="9"
-        x2="21"
-        y2="9"
+      <circle cx="10" cy="9" r="4" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M3 24c0-4.4 3.6-7.5 7-7.5s7 3.1 7 7.5"
         stroke="currentColor"
-        strokeWidth="1.2"
+        strokeWidth="1.5"
         strokeLinecap="round"
       />
-      <line
-        x1="13"
-        y1="13"
-        x2="19"
-        y2="13"
+      <circle cx="19.5" cy="10.5" r="3.2" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M16.8 16.6c1-.6 2-.9 2.7-.9 2.8 0 5.5 2.4 5.5 6"
         stroke="currentColor"
-        strokeWidth="1.2"
+        strokeWidth="1.5"
         strokeLinecap="round"
       />
     </svg>
@@ -121,7 +115,7 @@ const features = [
     Icon: FlagIcon,
     title: "Rounds",
     description:
-      "Standard mode shows Stroke Play and Stableford scores side by side. Scramble format calculates your team handicap automatically using slope and rating.",
+      "Enter strokes hole by hole and see your Stroke Play and Stableford scores side by side. Play with or without handicap — net scores and Stableford points adjust automatically.",
   },
   {
     Icon: TrophyIcon,
@@ -130,10 +124,10 @@ const features = [
       "Group rounds into a season-long tournament. Players earn points by placement, with live leaderboards and optional drop-worst-rounds scoring.",
   },
   {
-    Icon: CardsIcon,
-    title: "Side Games",
+    Icon: FriendsIcon,
+    title: "Friends",
     description:
-      "Add Best Ball, Worst Ball, or Skins to any round. Results update in real time as scores come in, hole by hole.",
+      "See when your friends are playing live and follow their scores as they happen. Add them straight into your next round or tour.",
   },
   {
     Icon: ChartIcon,
@@ -148,13 +142,13 @@ const steps = [
     number: "01",
     title: "Create a round",
     description:
-      "Pick a course, choose Standard or Scramble, and add your playing partners. Guests can join without creating an account.",
+      "Pick a course and tee, then add your playing partners — up to 4 per round. Guests can join without creating an account.",
   },
   {
     number: "02",
     title: "Score hole by hole",
     description:
-      "Enter strokes as you play. See live Stableford points, stroke play totals, and side game standings update in real time.",
+      "Enter strokes as you play. See live Stableford points and stroke play totals update in real time, hole by hole.",
   },
   {
     number: "03",
@@ -254,7 +248,7 @@ export default function Home() {
             className="text-base leading-relaxed max-w-[22rem] mb-14"
             style={{ color: "rgba(255,255,255,0.4)" }}
           >
-            Golf scoring, tours, and side games — built for players who care about every stroke.
+            Golf scoring, tours, and friends — built for players who care about every stroke.
           </p>
 
           <a
