@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +23,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Mulle · Golf Scoring",
-  description:
-    "Track rounds, compete in tours, and play with friends.",
+  description: "Track rounds, compete in tours, and play with friends.",
 };
 
 export default function RootLayout({
@@ -35,6 +36,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full`}
     >
+      <Analytics />
+      <SpeedInsights />
       <body className="min-h-full flex flex-col antialiased">
         <header className="sticky top-0 z-50" style={{ background: "#1b1a1b" }}>
           <div className="max-w-5xl mx-auto px-8 py-6 flex items-center justify-between">
