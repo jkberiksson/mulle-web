@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Fredoka, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -21,6 +21,12 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 });
 
+const fredoka = Fredoka({
+  variable: "--font-fredoka",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Mulle · Golf Scoring",
   description: "Track rounds, compete in tours, and play with friends.",
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${fredoka.variable} h-full`}
     >
       <Analytics />
       <SpeedInsights />
@@ -43,7 +49,7 @@ export default function RootLayout({
           <div className="max-w-5xl mx-auto px-8 py-6 flex items-center justify-between">
             <Link
               href="/"
-              className="font-display font-bold text-white uppercase tracking-tight text-lg"
+              className="font-logo font-bold text-white uppercase tracking-tight text-lg"
             >
               Mulle
             </Link>
