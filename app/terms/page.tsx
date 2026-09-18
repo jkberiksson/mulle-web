@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Terms of Use · Mulle" };
+export const metadata: Metadata = { title: "Terms of Use · Mulle Golf" };
 
 export default function TermsPage() {
   return (
-    <div style={{ background: "#f5f4f0" }}>
+    <div style={{ background: "var(--paper)" }}>
       <div className="max-w-2xl mx-auto px-8 py-16">
         <h1
           className="font-display font-bold text-2xl tracking-tight mb-1"
-          style={{ color: "#16150e" }}
+          style={{ color: "var(--ink)" }}
         >
           Terms of Use
         </h1>
-        <p className="text-sm mb-12" style={{ color: "#4f5d72" }}>
+        <p className="text-sm mb-12" style={{ color: "var(--ink-soft)" }}>
           Last updated: May 2026
         </p>
 
-        <div className="flex flex-col gap-10" style={{ color: "#16150e" }}>
+        <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               1. About
             </h2>
@@ -33,7 +33,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               2. Your Account
             </h2>
@@ -47,7 +47,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               3. Acceptable Use
             </h2>
@@ -60,7 +60,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               4. Content
             </h2>
@@ -73,7 +73,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               5. Availability
             </h2>
@@ -87,7 +87,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               6. Governing Law
             </h2>
@@ -99,7 +99,7 @@ export default function TermsPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               7. Contact
             </h2>

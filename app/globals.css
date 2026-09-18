@@ -1,21 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f4f0;
-  --foreground: #16150e;
+  --paper: #f3e9d2;
+  --paper-light: #fbf5e6;
+  --ink: #201b12;
+  --ink-soft: #6d6349;
+  --rule: #d9c99e;
+  --fairway: #1a6b3c;
+  --fairway-dark: #103a21;
+  --pencil: #bf4530;
+  --tee: #d9a441;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --color-paper: var(--paper);
+  --color-paper-light: var(--paper-light);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-rule: var(--rule);
+  --color-fairway: var(--fairway);
+  --color-pencil: var(--pencil);
+  --color-tee: var(--tee);
+  --font-display: var(--font-fraunces), "Fraunces", serif;
   --font-logo: var(--font-fredoka), "Fredoka", sans-serif;
   --font-sans: var(--font-geist-sans), "Geist", sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-sans);
+}
+
+/* Faint ledger grid printed across the paper background */
+.ledger-bg {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 39px,
+    rgba(32, 27, 18, 0.06) 40px
+  );
+}
+
+/* Scanned-paper grain */
+.paper-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

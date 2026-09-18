@@ -1,15 +1,14 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const APP_URL =
+  "https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301";
+
 function FlagIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <line
-        x1="7"
-        y1="3"
-        x2="7"
-        y2="25"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
+      <line x1="7" y1="3" x2="7" y2="25" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
       <path d="M7 4.5L22 10.5L7 16.5V4.5Z" fill="currentColor" />
     </svg>
   );
@@ -17,344 +16,337 @@ function FlagIcon() {
 
 function TrophyIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <path
-        d="M9 5h10l-1.5 9c0 2.2-1.8 4-3.5 4S10.5 16.2 10.5 14L9 5z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4.5 5H7v2.5c0 1.8 1.5 3.2 3 3.8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M23.5 5H21v2.5c0 1.8-1.5 3.2-3 3.8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <line
-        x1="14"
-        y1="18"
-        x2="14"
-        y2="22"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <line
-        x1="10"
-        y1="22"
-        x2="18"
-        y2="22"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
+      <path d="M9 5h10l-1.5 9c0 2.2-1.8 4-3.5 4S10.5 16.2 10.5 14L9 5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M4.5 5H7v2.5c0 1.8 1.5 3.2 3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M23.5 5H21v2.5c0 1.8-1.5 3.2-3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="14" y1="18" x2="14" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="10" y1="22" x2="18" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
 
 function FriendsIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <circle cx="10" cy="9" r="4" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M3 24c0-4.4 3.6-7.5 7-7.5s7 3.1 7 7.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <circle cx="19.5" cy="10.5" r="3.2" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M16.8 16.6c1-.6 2-.9 2.7-.9 2.8 0 5.5 2.4 5.5 6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
+      <circle cx="10" cy="9" r="4" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M3 24c0-4.4 3.6-7.5 7-7.5s7 3.1 7 7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="19.5" cy="10.5" r="3.2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M16.8 16.6c1-.6 2-.9 2.7-.9 2.8 0 5.5 2.4 5.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
 
-function ChartIcon() {
+function TargetIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <polyline
-        points="3,22 8,15 14,17 22,8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <polyline
-        points="17,8 22,8 22,13"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <line
-        x1="3"
-        y1="25"
-        x2="25"
-        y2="25"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.35"
-        strokeLinecap="round"
-      />
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
+      <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="14" cy="14" r="5.5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="14" cy="14" r="1.6" fill="currentColor" />
     </svg>
   );
 }
 
-const features = [
+const scorecard = [
+  { hole: 1, par: 4, score: 4 },
+  { hole: 2, par: 4, score: 3 },
+  { hole: 3, par: 3, score: 4 },
+  { hole: 4, par: 5, score: 4 },
+  { hole: 5, par: 4, score: 5 },
+  { hole: 6, par: 4, score: 3 },
+  { hole: 7, par: 3, score: 2 },
+  { hole: 8, par: 5, score: 5 },
+  { hole: 9, par: 4, score: 4 },
+];
+
+const tickerItems = [
+  "Stroke play",
+  "Stableford",
+  "Live leaderboards",
+  "Playing handicap",
+  "Season tours",
+  "Friends on course",
+];
+
+const notes = [
   {
     Icon: FlagIcon,
     title: "Rounds",
+    rotate: "-rotate-2",
+    accent: "var(--fairway)",
     description:
-      "Enter strokes hole by hole and see your Stroke Play and Stableford scores side by side. Play with or without handicap — net scores and Stableford points adjust automatically.",
+      "Enter strokes hole by hole. Stroke play and Stableford tally side by side — net scores adjust automatically if you play with handicap.",
   },
   {
     Icon: TrophyIcon,
     title: "Tours",
+    rotate: "rotate-1",
+    accent: "var(--pencil)",
     description:
-      "Group rounds into a season-long tournament. Players earn points by placement, with live leaderboards and optional drop-worst-rounds scoring.",
+      "Group rounds into a season-long tournament. Points by placement, a live leaderboard, and optional drop-worst-rounds scoring.",
   },
   {
     Icon: FriendsIcon,
     title: "Friends",
+    rotate: "rotate-2",
+    accent: "var(--tee)",
     description:
-      "See when your friends are playing live and follow their scores as they happen. Add them straight into your next round or tour.",
+      "Watch friends' rounds live and follow their scores as they happen. Pull them straight into your next round or tour.",
   },
   {
-    Icon: ChartIcon,
+    Icon: TargetIcon,
     title: "Handicap",
+    rotate: "-rotate-1",
+    accent: "var(--fairway)",
     description:
-      "Full playing handicap per course and tee, slope and rating adjusted. Track your progression with a handicap history chart on your profile.",
+      "Play with your real handicap. Every card adjusts for slope and rating on your tee, so gross and net scores are both right there, hole by hole.",
   },
 ];
 
 const steps = [
   {
-    number: "01",
+    number: "1",
+    dot: "var(--pencil)",
     title: "Create a round",
-    description:
-      "Pick a course and tee, then add your playing partners — up to 4 per round. Guests can join without creating an account.",
+    description: "Pick a course and tee, add up to 4 players. Guests can join without an account.",
   },
   {
-    number: "02",
+    number: "2",
+    dot: "var(--tee)",
     title: "Score hole by hole",
-    description:
-      "Enter strokes as you play. See live Stableford points and stroke play totals update in real time, hole by hole.",
+    description: "Enter strokes as you play — Stableford points and totals update live.",
   },
   {
-    number: "03",
+    number: "3",
+    dot: "var(--fairway)",
     title: "Finish & compete",
-    description:
-      "Lock the scorecard when done. Your result counts toward Tour standings and your handicap history is updated.",
+    description: "Lock the card. It counts toward your Tour standing and handicap history.",
   },
 ];
+
+function scoreMark(par: number, score: number) {
+  const diff = score - par;
+  if (diff <= -1) return "circle";
+  if (diff >= 1) return "square";
+  return "plain";
+}
 
 export default function Home() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section
-        className="relative min-h-dvh flex flex-col"
-        style={{ background: "#1b1a1b" }}
-      >
-        {/* Golf course background photo */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/golf-bg.jpg"
-          alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{ opacity: 0.4 }}
-        />
-
-        {/* Dark overlay for text legibility */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(27,26,27,0.55) 0%, rgba(27,26,27,0.3) 45%, rgba(27,26,27,0.8) 100%)",
-          }}
-        />
-
-        {/* Green atmospheric glow rising from the bottom */}
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 pointer-events-none"
-          style={{
-            height: "70%",
-            background:
-              "radial-gradient(ellipse 90% 100% at 50% 100%, rgba(26,107,60,0.44) 0%, rgba(26,107,60,0.13) 45%, transparent 70%)",
-          }}
-        />
-
-        {/* Subtle grain texture */}
-        <svg
-          aria-hidden
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ opacity: 0.05 }}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <filter id="grain">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.72"
-              numOctaves="4"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#grain)" />
-        </svg>
-
-        {/* Hero content */}
-        <div className="relative flex flex-col items-center justify-center flex-1 text-center px-6 pb-24">
-          <p
-            className="font-display font-semibold text-xs uppercase tracking-[0.3em] mb-12"
-            style={{ color: "rgba(26,107,60,0.95)" }}
+      <section className="relative overflow-hidden ledger-bg">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24">
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-8"
+            style={{ color: "var(--pencil)" }}
           >
-            Golf Scoring
-          </p>
+            ⛳ Golf Scoring, Kept Properly
+          </motion.p>
 
-          <h1
-            className="font-logo font-bold text-white leading-none tracking-[-0.04em] mb-8"
-            style={{ fontSize: "clamp(5.5rem, 20vw, 15rem)" }}
+          <motion.h1
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="font-logo font-bold leading-[0.85] tracking-tight -ml-1 flex items-baseline flex-wrap gap-x-4"
+            style={{ fontSize: "clamp(3.4rem, 13vw, 9rem)", color: "var(--ink)" }}
           >
             Mulle
-          </h1>
+            <span style={{ fontSize: "0.34em", color: "var(--fairway)" }}>
+              Golf
+            </span>
+          </motion.h1>
 
-          <p
-            className="font-display font-semibold tracking-tight leading-tight max-w-xl mb-5"
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="font-display italic max-w-xl mt-6 mb-14"
             style={{
-              color: "rgba(255,255,255,0.88)",
-              fontSize: "clamp(1.3rem, 3vw, 2.5rem)",
+              color: "var(--ink)",
+              fontSize: "clamp(1.4rem, 3.2vw, 2.1rem)",
+              fontOpticalSizing: "auto",
             }}
           >
-            Track Every Swing.
-            <br />
-            Master In Game.
-          </p>
+            Every round is a story worth keeping score of.
+          </motion.p>
 
-          <p
-            className="text-base leading-relaxed max-w-[22rem] mb-14"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+          {/* Mini scorecard strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="inline-block bg-paper-light p-4 sm:p-6 shadow-[6px_6px_0_var(--ink)]"
+            style={{ border: "2px solid var(--ink)", transform: "rotate(-1deg)" }}
           >
-            Golf scoring, tours, and friends — built for players who care about every stroke.
-          </p>
+            <div className="grid grid-cols-[auto_repeat(9,1.9rem)] sm:grid-cols-[auto_repeat(9,2.4rem)] gap-y-1 font-mono text-[11px] sm:text-xs">
+              <span className="pr-4 text-ink-soft self-center">HOLE</span>
+              {scorecard.map((h) => (
+                <span key={h.hole} className="text-center text-ink-soft">
+                  {h.hole}
+                </span>
+              ))}
 
-          <a
-            href="https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-display font-semibold text-sm uppercase tracking-[0.15em] text-white px-8 py-4 transition-opacity hover:opacity-85"
-            style={{ background: "#1a6b3c" }}
+              <span className="pr-4 text-ink-soft self-center">PAR</span>
+              {scorecard.map((h) => (
+                <span key={h.hole} className="text-center text-ink-soft">
+                  {h.par}
+                </span>
+              ))}
+
+              <span className="pr-4 self-center font-semibold" style={{ color: "var(--ink)" }}>
+                YOU
+              </span>
+              {scorecard.map((h) => {
+                const mark = scoreMark(h.par, h.score);
+                return (
+                  <span key={h.hole} className="flex items-center justify-center py-0.5">
+                    <span
+                      title={mark === "circle" ? "Birdie or better" : mark === "square" ? "Bogey or worse" : "Par"}
+                      className="relative inline-flex items-center justify-center w-6 h-6 font-semibold"
+                      style={{ color: "var(--ink)" }}
+                    >
+                      {mark === "circle" && (
+                        <span
+                          className="absolute inset-0 rounded-full"
+                          style={{ border: "1.5px solid var(--fairway)" }}
+                        />
+                      )}
+                      {mark === "square" && (
+                        <span
+                          className="absolute inset-0.5"
+                          style={{ border: "1.5px solid var(--pencil)" }}
+                        />
+                      )}
+                      {h.score}
+                    </span>
+                  </span>
+                );
+              })}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-14"
           >
-            Download on the App Store →
-          </a>
+            <motion.a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ rotate: 0, scale: 1.03 }}
+              className="inline-block font-mono font-semibold text-sm uppercase tracking-[0.15em] px-8 py-4"
+              style={{
+                background: "var(--fairway)",
+                color: "var(--paper-light)",
+                border: "2px solid var(--ink)",
+                transform: "rotate(-1.5deg)",
+                boxShadow: "4px 4px 0 var(--ink)",
+              }}
+            >
+              Download for iOS →
+            </motion.a>
+          </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <p
-          aria-hidden
-          className="relative text-center pb-12 font-display text-[10px] uppercase tracking-[0.3em]"
-          style={{ color: "rgba(255,255,255,0.18)" }}
-        >
-          Scroll
-        </p>
       </section>
 
-      {/* ── Features ───────────────────────────────────────── */}
-      <section className="py-28 px-6" style={{ background: "#f5f4f0" }}>
+      {/* ── Ticker ─────────────────────────────────────────── */}
+      <div
+        className="overflow-hidden py-4"
+        style={{ background: "var(--ink)", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}
+      >
+        <div className="marquee-track">
+          {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
+            <span
+              key={i}
+              className="font-display italic whitespace-nowrap px-6 text-lg sm:text-xl"
+              style={{ color: "var(--paper)" }}
+            >
+              {item} <span style={{ color: "var(--tee)" }}>✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Features as pinned notes ───────────────────────── */}
+      <section className="py-24 sm:py-32 px-6 sm:px-8">
         <div className="max-w-5xl mx-auto">
           <p
-            className="font-display font-semibold text-xs uppercase tracking-[0.28em] mb-16"
-            style={{ color: "#1a6b3c" }}
+            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-14"
+            style={{ color: "var(--ink-soft)" }}
           >
-            Features
+            What&apos;s in the bag
           </p>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-px"
-            style={{ background: "#d4cfc3" }}
-          >
-            {features.map(({ Icon, title, description }) => (
-              <div key={title} className="p-10" style={{ background: "#faf9f6" }}>
-                <div className="mb-6" style={{ color: "#1a6b3c" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+            {notes.map(({ Icon, title, description, rotate, accent }, i) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                className={`${rotate} bg-paper-light p-8`}
+                style={{ border: "2px solid var(--ink)", boxShadow: "5px 5px 0 var(--ink)" }}
+              >
+                <div className="mb-5" style={{ color: accent }}>
                   <Icon />
                 </div>
-                <h3
-                  className="font-display font-bold text-xl mb-3"
-                  style={{ color: "#16150e" }}
-                >
+                <h3 className="font-display font-semibold text-xl mb-3" style={{ color: "var(--ink)" }}>
                   {title}
                 </h3>
-                <p
-                  className="text-sm leading-[1.8]"
-                  style={{ color: "#4f5d72" }}
-                >
+                <p className="text-sm leading-[1.75]" style={{ color: "var(--ink-soft)" }}>
                   {description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── How it works ───────────────────────────────────── */}
-      <section className="py-28 px-6" style={{ background: "#ffffff" }}>
+      {/* ── How it works — the routing ─────────────────────── */}
+      <section className="py-24 sm:py-32 px-6 sm:px-8" style={{ borderTop: "2px solid var(--ink)" }}>
         <div className="max-w-5xl mx-auto">
           <p
-            className="font-display font-semibold text-xs uppercase tracking-[0.28em] mb-16"
-            style={{ color: "#1a6b3c" }}
+            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-16"
+            style={{ color: "var(--ink-soft)" }}
           >
-            How it works
+            The routing
           </p>
 
-          <div style={{ borderTop: "1px solid #d4cfc3" }}>
-            {steps.map(({ number, title, description }) => (
-              <div
+          <div className="flex flex-col sm:flex-row gap-12 sm:gap-6 relative">
+            <div
+              aria-hidden
+              className="hidden sm:block absolute top-[10px] left-0 right-0 h-0"
+              style={{ borderTop: "2px dashed var(--rule)" }}
+            />
+            {steps.map(({ number, dot, title, description }, i) => (
+              <motion.div
                 key={number}
-                className="flex gap-8 md:gap-16 items-start py-14"
-                style={{ borderBottom: "1px solid #d4cfc3" }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="relative flex-1"
               >
                 <span
                   aria-hidden
-                  className="font-display font-bold leading-[0.85] flex-shrink-0 select-none"
-                  style={{
-                    fontSize: "clamp(4.5rem, 9vw, 8rem)",
-                    color: "#1a6b3c",
-                    opacity: 0.13,
-                  }}
-                >
-                  {number}
-                </span>
-                <div className="pt-2 md:pt-5">
-                  <h3
-                    className="font-display font-bold mb-4"
-                    style={{
-                      color: "#16150e",
-                      fontSize: "clamp(1.35rem, 2.5vw, 2rem)",
-                    }}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    className="text-base leading-relaxed max-w-lg"
-                    style={{ color: "#4f5d72" }}
-                  >
-                    {description}
-                  </p>
-                </div>
-              </div>
+                  className="relative z-10 inline-flex items-center justify-center w-5 h-5 rounded-full mb-6"
+                  style={{ background: dot, border: "2px solid var(--ink)" }}
+                />
+                <h3 className="font-display font-semibold text-2xl mb-3" style={{ color: "var(--ink)" }}>
+                  {title}
+                </h3>
+                <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--ink-soft)" }}>
+                  {description}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -362,30 +354,36 @@ export default function Home() {
 
       {/* ── Download CTA ───────────────────────────────────── */}
       <section
-        className="py-32 px-6 text-center"
-        style={{ background: "#1a6b3c" }}
+        className="py-28 sm:py-36 px-6 text-center"
+        style={{ background: "var(--fairway)", borderTop: "2px solid var(--ink)" }}
       >
         <div className="max-w-2xl mx-auto">
           <h2
-            className="font-display font-bold text-white tracking-[-0.04em] leading-[0.9] mb-14"
-            style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)" }}
+            className="font-display italic leading-[0.95] mb-12"
+            style={{ color: "var(--paper-light)", fontSize: "clamp(2.6rem, 7vw, 5rem)" }}
           >
-            Ready
+            Ready for the
             <br />
-            to play?
+            back nine?
           </h2>
-          <a
-            href="https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301"
+          <motion.a
+            href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center font-display font-semibold text-sm uppercase tracking-[0.15em] px-8 py-4 transition-opacity hover:opacity-85"
-            style={{ background: "#ffffff", color: "#1a6b3c" }}
+            whileHover={{ rotate: 0, scale: 1.04 }}
+            className="inline-block font-mono font-semibold text-sm uppercase tracking-[0.15em] px-8 py-4"
+            style={{
+              background: "var(--paper-light)",
+              color: "var(--fairway-dark)",
+              border: "2px solid var(--ink)",
+              transform: "rotate(1deg)",
+              boxShadow: "4px 4px 0 var(--ink)",
+            }}
           >
             Download on the App Store →
-          </a>
+          </motion.a>
         </div>
       </section>
-
     </>
   );
 }

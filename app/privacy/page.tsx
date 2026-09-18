@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Privacy Policy · Mulle" };
+export const metadata: Metadata = { title: "Privacy Policy · Mulle Golf" };
 
 export default function PrivacyPage() {
   return (
-    <div style={{ background: "#f5f4f0" }}>
+    <div style={{ background: "var(--paper)" }}>
       <div className="max-w-2xl mx-auto px-8 py-16">
         <h1
           className="font-display font-bold text-2xl tracking-tight mb-1"
-          style={{ color: "#16150e" }}
+          style={{ color: "var(--ink)" }}
         >
           Privacy Policy
         </h1>
-        <p className="text-sm mb-12" style={{ color: "#4f5d72" }}>
+        <p className="text-sm mb-12" style={{ color: "var(--ink-soft)" }}>
           Last updated: August 2026
         </p>
 
-        <div className="flex flex-col gap-10" style={{ color: "#16150e" }}>
+        <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               1. Data Controller
             </h2>
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               2. What We Collect
             </h2>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               3. Why We Collect It
             </h2>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               4. Retention
             </h2>
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               5. Third Parties
             </h2>
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               6. Your Rights
             </h2>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               7. Contact
             </h2>

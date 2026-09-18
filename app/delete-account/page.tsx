@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Delete Account · Mulle" };
+export const metadata: Metadata = { title: "Delete Account · Mulle Golf" };
 
 export default function DeleteAccountPage() {
   return (
-    <div style={{ background: "#f5f4f0" }}>
+    <div style={{ background: "var(--paper)" }}>
       <div className="max-w-2xl mx-auto px-8 py-16">
         <h1
           className="font-display font-bold text-2xl tracking-tight mb-1"
-          style={{ color: "#16150e" }}
+          style={{ color: "var(--ink)" }}
         >
           Delete Your Account
         </h1>
-        <p className="text-sm mb-12" style={{ color: "#4f5d72" }}>
+        <p className="text-sm mb-12" style={{ color: "var(--ink-soft)" }}>
           Mulle · Account and data deletion
         </p>
 
-        <div className="flex flex-col gap-10" style={{ color: "#16150e" }}>
+        <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               Delete from the app
             </h2>
@@ -39,7 +39,7 @@ export default function DeleteAccountPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               Request by email
             </h2>
@@ -60,7 +60,7 @@ export default function DeleteAccountPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               What gets deleted
             </h2>
@@ -76,7 +76,7 @@ export default function DeleteAccountPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               Retention
             </h2>
@@ -91,7 +91,7 @@ export default function DeleteAccountPage() {
           <section>
             <h2
               className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
-              style={{ color: "#4f5d72" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               Contact
             </h2>

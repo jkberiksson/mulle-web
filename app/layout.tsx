@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fredoka, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Fredoka, Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -15,10 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
 const fredoka = Fredoka({
@@ -28,7 +30,7 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Mulle · Golf Scoring",
+  title: "Mulle Golf",
   description: "Track rounds, compete in tours, and play with friends.",
 };
 
@@ -40,68 +42,61 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${fredoka.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${fredoka.variable} h-full`}
     >
       <Analytics />
       <SpeedInsights />
       <body className="min-h-full flex flex-col antialiased">
-        <header className="sticky top-0 z-50" style={{ background: "#1b1a1b" }}>
-          <div className="max-w-5xl mx-auto px-8 py-6 flex items-center justify-between">
+        <header
+          className="sticky top-0 z-50 bg-paper"
+          style={{ borderBottom: "2px solid var(--ink)" }}
+        >
+          <div className="max-w-5xl mx-auto px-6 sm:px-8 py-5 flex items-center justify-between">
             <Link
               href="/"
-              className="font-logo font-bold text-white uppercase tracking-tight text-lg"
+              className="font-logo font-bold text-ink text-xl -rotate-2 inline-block"
             >
-              Mulle
+              Mulle Golf
             </Link>
             <a
               href="https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display text-xs font-semibold uppercase tracking-[0.18em] transition-opacity hover:opacity-100"
-              style={{ color: "rgba(255,255,255,0.5)" }}
+              className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink border-b border-dashed border-ink pb-0.5 transition-colors hover:text-fairway hover:border-fairway"
             >
-              App Store ↗
+              Get the app ↗
             </a>
           </div>
         </header>
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-paper">{children}</main>
 
         <footer
-          className="px-6 py-10"
-          style={{
-            background: "#1b1a1b",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-          }}
+          className="px-6 py-10 bg-paper"
+          style={{ borderTop: "2px solid var(--ink)" }}
         >
-          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span
-              className="font-display text-xs uppercase tracking-[0.22em]"
-              style={{ color: "rgba(255,255,255,0.28)" }}
-            >
-              © 2026 Mulle
+          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+              Mulle Golf · Est. 2026 · Scored by hand, kept forever
             </span>
-            <div className="flex gap-8">
+            <div className="flex gap-6 sm:gap-8">
               <Link
                 href="/privacy"
-                className="font-display text-xs uppercase tracking-[0.22em] transition-colors hover:text-white"
-                style={{ color: "rgba(255,255,255,0.28)" }}
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="font-display text-xs uppercase tracking-[0.22em] transition-colors hover:text-white"
-                style={{ color: "rgba(255,255,255,0.28)" }}
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
               >
                 Terms
               </Link>
               <Link
                 href="/delete-account"
-                className="font-display text-xs uppercase tracking-[0.22em] transition-colors hover:text-white"
-                style={{ color: "rgba(255,255,255,0.28)" }}
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
               >
-                Delete Account
+                Delete account
               </Link>
             </div>
           </div>
