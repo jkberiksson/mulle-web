@@ -45,8 +45,8 @@ export default function PrivacyPage() {
             <p className="text-sm leading-relaxed">
               When you create an account and use Mulle we collect: name, email
               address, handicap, home club, gender, unit preference, profile
-              photos, golf round data (scores, course, date, tee), tour
-              memberships, and friend connections.
+              photos, golf round data (scores, course, date, tee), and friend
+              connections.
             </p>
           </section>
 
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
               3. Why We Collect It
             </h2>
             <p className="text-sm leading-relaxed">
-              To provide and operate the service — scoring, leaderboards, tours,
+              To provide and operate the service — scoring, leaderboards,
               and social features. Legal basis: performance of contract.
             </p>
           </section>

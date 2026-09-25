@@ -31,7 +31,7 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   title: "Mulle Golf",
-  description: "Track rounds, compete in tours, and play with friends.",
+  description: "Track rounds and play with friends.",
 };
 
 export default function RootLayout({
