@@ -87,7 +87,7 @@ const steps = [
     number: "1",
     dot: "var(--pencil)",
     title: "Create a round",
-    description: "Pick a course and tee, add up to 4 players. Guests can join without an account.",
+    description: "Pick a course and tee, add up to 4 players.",
   },
   {
     number: "2",
