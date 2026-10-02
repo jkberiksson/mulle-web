@@ -25,6 +25,18 @@ function FriendsIcon() {
   );
 }
 
+function TrophyIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
+      <path d="M9 5h10l-1.5 9c0 2.2-1.8 4-3.5 4S10.5 16.2 10.5 14L9 5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M4.5 5H7v2.5c0 1.8 1.5 3.2 3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M23.5 5H21v2.5c0 1.8-1.5 3.2-3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="14" y1="18" x2="14" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="10" y1="22" x2="18" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function TargetIcon() {
   return (
     <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -52,6 +64,7 @@ const tickerItems = [
   "Stableford",
   "Live leaderboards",
   "Playing handicap",
+  "Tournaments",
   "Friends on course",
 ];
 
@@ -65,12 +78,20 @@ const notes = [
       "Enter strokes hole by hole. Stroke play and Stableford tally side by side — net scores adjust automatically if you play with handicap.",
   },
   {
+    Icon: TrophyIcon,
+    title: "Tournaments",
+    rotate: "rotate-1",
+    accent: "var(--pencil)",
+    description:
+      "Run a tournament for your crew — individually or in teams, over up to 12 rounds. Mix stroke play, Stableford, best ball and scramble, rank by total or placement points, and drop the worst rounds.",
+  },
+  {
     Icon: FriendsIcon,
     title: "Friends",
-    rotate: "rotate-1",
+    rotate: "rotate-2",
     accent: "var(--tee)",
     description:
-      "Watch friends' rounds live and follow their scores as they happen. Pull them straight into your next round.",
+      "Watch friends' rounds live and follow their scores as they happen. Pull them straight into your next round or tournament.",
   },
   {
     Icon: TargetIcon,
@@ -99,7 +120,7 @@ const steps = [
     number: "3",
     dot: "var(--fairway)",
     title: "Finish & compete",
-    description: "Lock the card. It counts toward your handicap history.",
+    description: "Lock the card. It counts toward your tournament standings.",
   },
 ];
 

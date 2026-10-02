@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm mb-12" style={{ color: "var(--ink-soft)" }}>
-          Last updated: August 2026
+          Last updated: October 2026
         </p>
 
         <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
@@ -45,8 +45,9 @@ export default function PrivacyPage() {
             <p className="text-sm leading-relaxed">
               When you create an account and use Mulle we collect: name, email
               address, handicap, home club, gender, unit preference, profile
-              photos, golf round data (scores, course, date, tee), and friend
-              connections.
+              photos, golf round data (scores, course, date, tee), tournament
+              memberships and results, and friend connections. The app also
+              sends performance and crash diagnostics.
             </p>
           </section>
 
@@ -58,7 +59,7 @@ export default function PrivacyPage() {
               3. Why We Collect It
             </h2>
             <p className="text-sm leading-relaxed">
-              To provide and operate the service — scoring, leaderboards,
+              To provide and operate the service — scoring, leaderboards, tournaments,
               and social features. Legal basis: performance of contract.
             </p>
           </section>
@@ -85,7 +86,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-sm leading-relaxed">
               We use Supabase (EU) for infrastructure and Expo for push
-              notifications. We do not sell your data.
+              notifications and app performance and crash monitoring. We do not sell your data.
             </p>
           </section>
 

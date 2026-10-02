@@ -68,8 +68,8 @@ export default function DeleteAccountPage() {
               Deleting your account permanently removes all your personal data
               from our systems: your name, email address, handicap, home club,
               gender, unit preference, profile photos, golf round data (scores,
-              course, date, tee), and friend connections. Deletion is permanent
-              and cannot be undone.
+              course, date, tee), tournament memberships, and friend
+              connections. Deletion is permanent and cannot be undone.
             </p>
           </section>
 
