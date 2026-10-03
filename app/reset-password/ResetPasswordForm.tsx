@@ -15,6 +15,21 @@ export default function ResetPasswordForm() {
   useEffect(() => {
     const supabase = getSupabase();
 
+    // The recovery email links straight here with ?token_hash=…&type=recovery
+    // (so the link shows mulle.app, and mail scanners prefetching it can't burn
+    // the one-time token). Verifying it starts the recovery session.
+    const params = new URLSearchParams(window.location.search);
+    const tokenHash = params.get("token_hash");
+    if (tokenHash && params.get("type") === "recovery") {
+      window.history.replaceState(null, "", window.location.pathname);
+      supabase.auth
+        .verifyOtp({ token_hash: tokenHash, type: "recovery" })
+        .then(({ error }) => setStep(error ? "error" : "form"));
+      return;
+    }
+
+    // Fallback: links that went through Supabase's /verify redirect land here
+    // with the session already in the URL hash.
     const { data: listener } = supabase.auth.onAuthStateChange((event) => {
       if (event === "PASSWORD_RECOVERY") setStep("form");
     });
