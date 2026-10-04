@@ -49,6 +49,12 @@ export default function PrivacyPage() {
               memberships and results, and friend connections. The app also
               sends performance and crash diagnostics.
             </p>
+            <p className="text-sm leading-relaxed mt-3">
+              If you sign in with Apple or Google, we receive your name, your
+              email address (with Apple&apos;s &ldquo;Hide My Email&rdquo;, a
+              private relay address instead) and an account identifier from
+              them, and use them only to create and recognise your account.
+            </p>
           </section>
 
           <section>
@@ -59,8 +65,9 @@ export default function PrivacyPage() {
               3. Why We Collect It
             </h2>
             <p className="text-sm leading-relaxed">
-              To provide and operate the service — scoring, leaderboards, tournaments,
-              and social features. Legal basis: performance of contract.
+              To provide and operate the service — scoring, leaderboards,
+              tournaments, and social features. Legal basis: performance of
+              contract.
             </p>
           </section>
 
@@ -85,8 +92,15 @@ export default function PrivacyPage() {
               5. Third Parties
             </h2>
             <p className="text-sm leading-relaxed">
-              We use Supabase (EU) for infrastructure and Expo for push
-              notifications and app performance and crash monitoring. We do not sell your data.
+              We use Supabase (EU) for infrastructure, Expo for push
+              notifications and app performance and crash monitoring, and Google
+              Firebase Cloud Messaging to deliver notifications on Android. If
+              you choose to sign in with Apple or Google, they learn that you
+              signed in to Mulle — but we share none of your Mulle data (rounds,
+              scores, friends) with them; Google&apos;s sign-in library may send
+              Google technical data about the sign-in itself. You can remove
+              Mulle&apos;s access in your Apple ID or Google account settings at
+              any time. We do not sell your data.
             </p>
           </section>
 
