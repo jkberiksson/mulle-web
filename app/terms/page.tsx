@@ -76,9 +76,11 @@ export default function TermsPage() {
             <p className="text-sm leading-relaxed">
               Photos and comments you post remain yours. You grant us a licence
               to store and display them solely to operate the service. Content
-              on a round is visible to its players and their friends in the app.
-              You can delete your own content at any time, and a round&apos;s
-              creator can remove content from their round.
+              in a round&apos;s chat is visible to its players and their
+              friends in the app; content in a tournament&apos;s chat is visible
+              to its members. You can delete your own content at any time, a
+              round&apos;s creator can remove content from their round&apos;s
+              chat, and a tournament&apos;s organiser from its chat.
             </p>
           </section>
 
