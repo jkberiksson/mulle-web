@@ -47,9 +47,9 @@ export default function PrivacyPage() {
               address, handicap, home club, gender, unit preference, profile
               photos, golf round data (scores, course, date, tee, and the hole
               stats and bag you choose to add), tournament memberships and
-              results, friend connections, the reactions, comments and photos
-              you post on rounds, the users you block and the reports you send.
-              The app also sends performance and crash diagnostics.
+              results, friend connections, the messages and photos you post on
+              rounds, the users you block and the reports you send. The app also
+              sends performance and crash diagnostics.
             </p>
             <p className="text-sm leading-relaxed mt-3">
               If you sign in with Apple or Google, we receive your name, your
