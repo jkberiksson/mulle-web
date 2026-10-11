@@ -13,7 +13,7 @@ export default function TermsPage() {
           Terms of Use
         </h1>
         <p className="text-sm mb-12" style={{ color: "var(--ink-soft)" }}>
-          Last updated: May 2026
+          Last updated: October 2026
         </p>
 
         <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
@@ -55,6 +55,15 @@ export default function TermsPage() {
               Don&apos;t submit false scores, impersonate others, or attempt to
               disrupt the service.
             </p>
+            <p className="text-sm leading-relaxed mt-3">
+              We have zero tolerance for objectionable content and abusive
+              users. Don&apos;t post comments or photos that are offensive,
+              hateful, sexual, violent, harassing or otherwise inappropriate,
+              and don&apos;t harass other players. You can report a user,
+              comment or photo and block a user from within the app. We review
+              reports promptly, remove content that breaks these terms and may
+              suspend or delete the accounts behind it.
+            </p>
           </section>
 
           <section>
@@ -65,8 +74,11 @@ export default function TermsPage() {
               4. Content
             </h2>
             <p className="text-sm leading-relaxed">
-              Photos you upload remain yours. You grant us a licence to store
-              and display them solely to operate the service.
+              Photos and comments you post remain yours. You grant us a licence
+              to store and display them solely to operate the service. Content
+              on a round is visible to its players and their friends in the app.
+              You can delete your own content at any time, and a round&apos;s
+              creator can remove content from their round.
             </p>
           </section>
 
