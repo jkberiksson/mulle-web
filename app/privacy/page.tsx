@@ -45,8 +45,11 @@ export default function PrivacyPage() {
             <p className="text-sm leading-relaxed">
               When you create an account and use Mulle we collect: name, email
               address, handicap, home club, gender, unit preference, profile
-              photos, golf round data (scores, course, date, tee), tournament
-              memberships and results, and friend connections. The app also
+              photos, golf round data (scores, course, date, tee, and the hole
+              stats and bag you choose to add), tournament memberships and
+              results, friend connections, the messages and photos you post in
+              round and tournament chats, the users you block and the reports
+              you send. The app also
               sends performance and crash diagnostics.
             </p>
             <p className="text-sm leading-relaxed mt-3">
