@@ -7,7 +7,7 @@ export default function TermsPage() {
     <div style={{ background: "var(--paper)" }}>
       <div className="max-w-2xl mx-auto px-8 py-16">
         <h1
-          className="font-display font-bold text-2xl tracking-tight mb-1"
+          className="font-display font-semibold text-4xl sm:text-5xl tracking-[-0.03em] mb-3"
           style={{ color: "var(--ink)" }}
         >
           Terms of Use
@@ -19,7 +19,7 @@ export default function TermsPage() {
         <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               1. About
@@ -32,7 +32,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               2. Your Account
@@ -46,7 +46,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               3. Acceptable Use
@@ -68,7 +68,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               4. Content
@@ -86,7 +86,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               5. Availability
@@ -100,7 +100,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               6. Governing Law
@@ -112,7 +112,7 @@ export default function TermsPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               7. Contact
