@@ -7,7 +7,7 @@ export default function DeleteAccountPage() {
     <div style={{ background: "var(--paper)" }}>
       <div className="max-w-2xl mx-auto px-8 py-16">
         <h1
-          className="font-display font-bold text-2xl tracking-tight mb-1"
+          className="font-display font-semibold text-4xl sm:text-5xl tracking-[-0.03em] mb-3"
           style={{ color: "var(--ink)" }}
         >
           Delete Your Account
@@ -19,7 +19,7 @@ export default function DeleteAccountPage() {
         <div className="flex flex-col gap-10" style={{ color: "var(--ink)" }}>
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               Delete from the app
@@ -38,7 +38,7 @@ export default function DeleteAccountPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               Request by email
@@ -59,7 +59,7 @@ export default function DeleteAccountPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               What gets deleted
@@ -75,7 +75,7 @@ export default function DeleteAccountPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               Retention
@@ -90,7 +90,7 @@ export default function DeleteAccountPage() {
 
           <section>
             <h2
-              className="font-display font-semibold text-xs tracking-[0.22em] uppercase mb-3"
+              className="font-display font-semibold text-lg tracking-tight mb-2"
               style={{ color: "var(--ink-soft)" }}
             >
               Contact

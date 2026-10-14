@@ -131,7 +131,7 @@ export default function ResetPasswordForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="mb-4">
         <h1
-          className="font-display font-bold text-2xl tracking-tight mb-2"
+          className="font-display font-semibold text-3xl tracking-[-0.03em] mb-2"
           style={{ color: "var(--ink)" }}
         >
           Set new password
@@ -151,7 +151,7 @@ export default function ResetPasswordForm() {
           onChange={(e) => setPassword(e.target.value)}
           required
           placeholder="Min. 8 chars, uppercase, lowercase, number"
-          className="px-4 py-2.5 text-sm outline-none transition-colors"
+          className="rounded-xl px-4 py-3 text-[15px] outline-none transition-colors"
           style={{
             border: "1px solid var(--rule)",
             background: "var(--paper-light)",
@@ -172,7 +172,7 @@ export default function ResetPasswordForm() {
           onChange={(e) => setConfirm(e.target.value)}
           required
           placeholder="Repeat password"
-          className="px-4 py-2.5 text-sm outline-none transition-colors"
+          className="rounded-xl px-4 py-3 text-[15px] outline-none transition-colors"
           style={{
             border: "1px solid var(--rule)",
             background: "var(--paper-light)",
@@ -192,7 +192,7 @@ export default function ResetPasswordForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-2 font-display font-semibold text-sm uppercase tracking-[0.15em] text-white px-6 py-3.5 transition-opacity hover:opacity-85 disabled:opacity-50"
+        className="mt-2 rounded-full font-semibold text-[15px] text-white px-6 py-3.5 transition-opacity hover:opacity-90 disabled:opacity-50"
         style={{ background: "var(--fairway)" }}
       >
         {submitting ? "Updating…" : "Update password"}

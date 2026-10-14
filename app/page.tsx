@@ -1,388 +1,193 @@
-"use client";
+import Image, { type StaticImageData } from "next/image";
 
-import { motion } from "framer-motion";
+import { Phone } from "@/app/components/phone";
+import { Reveal } from "@/app/components/reveal";
+import { StoreButtons } from "@/app/components/store-buttons";
+import aerial from "@/public/img/aerial.jpg";
+import fairway from "@/public/img/fairway.jpg";
+import mascot from "@/public/img/mascot.png";
+import screenBoard from "@/public/img/screen-board.jpg";
+import screenHole from "@/public/img/screen-hole.jpg";
+import screenHome from "@/public/img/screen-home.jpg";
+import screenStats from "@/public/img/screen-stats.jpg";
 
-const APP_URL =
-  "https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301";
+type Feature = {
+  kicker: string;
+  title: string;
+  body: string;
+  points: string[];
+  screen: StaticImageData;
+  alt: string;
+};
 
-function FlagIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <line x1="7" y1="3" x2="7" y2="25" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M7 4.5L22 10.5L7 16.5V4.5Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function FriendsIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <circle cx="10" cy="9" r="4" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3 24c0-4.4 3.6-7.5 7-7.5s7 3.1 7 7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="19.5" cy="10.5" r="3.2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M16.8 16.6c1-.6 2-.9 2.7-.9 2.8 0 5.5 2.4 5.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function TrophyIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <path d="M9 5h10l-1.5 9c0 2.2-1.8 4-3.5 4S10.5 16.2 10.5 14L9 5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M4.5 5H7v2.5c0 1.8 1.5 3.2 3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M23.5 5H21v2.5c0 1.8-1.5 3.2-3 3.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="14" y1="18" x2="14" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="10" y1="22" x2="18" y2="22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function TargetIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden>
-      <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.6" />
-      <circle cx="14" cy="14" r="5.5" stroke="currentColor" strokeWidth="1.6" />
-      <circle cx="14" cy="14" r="1.6" fill="currentColor" />
-    </svg>
-  );
-}
-
-const scorecard = [
-  { hole: 1, par: 4, score: 4 },
-  { hole: 2, par: 4, score: 3 },
-  { hole: 3, par: 3, score: 4 },
-  { hole: 4, par: 5, score: 4 },
-  { hole: 5, par: 4, score: 5 },
-  { hole: 6, par: 4, score: 3 },
-  { hole: 7, par: 3, score: 2 },
-  { hole: 8, par: 5, score: 5 },
-  { hole: 9, par: 4, score: 4 },
-];
-
-const tickerItems = [
-  "Stroke play",
-  "Stableford",
-  "Live leaderboards",
-  "Playing handicap",
-  "Tournaments",
-  "Friends on course",
-];
-
-const notes = [
+const features: Feature[] = [
   {
-    Icon: FlagIcon,
-    title: "Rounds",
-    rotate: "-rotate-2",
-    accent: "var(--fairway)",
-    description:
-      "Enter strokes hole by hole. Stroke play and Stableford tally side by side — net scores adjust automatically if you play with handicap.",
+    kicker: "Rounds",
+    title: "Score hole by hole.",
+    body: "Keep the card for the whole group from one phone. Strokes and Stableford sit side by side, and your playing handicap comes straight from the slope and rating of your tee.",
+    points: ["One to four players", "Stroke play and Stableford together", "Closest to the pin and longest drive"],
+    screen: screenHole,
+    alt: "Scoring a hole for four players in Mulle",
   },
   {
-    Icon: TrophyIcon,
-    title: "Tournaments",
-    rotate: "rotate-1",
-    accent: "var(--pencil)",
-    description:
-      "Run a tournament for your crew — individually or in teams, over up to 12 rounds. Mix stroke play, Stableford, best ball and scramble, rank by total or placement points, and drop the worst rounds.",
+    kicker: "Tournaments",
+    title: "Compete with your crew.",
+    body: "Run the club championship, the trip or the season-long rivalry. Up to 60 players over as many as 12 rounds, alone or in teams, with a leaderboard that updates while you play.",
+    points: ["Stroke play, Stableford, best ball and scramble", "Rank by total or by placement points", "Drop the worst rounds"],
+    screen: screenBoard,
+    alt: "A live tournament leaderboard in Mulle",
   },
   {
-    Icon: FriendsIcon,
-    title: "Friends",
-    rotate: "rotate-2",
-    accent: "var(--tee)",
-    description:
-      "Watch friends' rounds live and follow their scores as they happen. Pull them straight into your next round or tournament.",
+    kicker: "Friends",
+    title: "Follow every round live.",
+    body: "See which friends are out on the course and how they're doing, hole by hole. Every round and tournament has its own chat for the banter and the photos.",
+    points: ["Friends playing right now", "Chat and photos in every round", "Your bag, rounds and tournaments in one place"],
+    screen: screenHome,
+    alt: "The Mulle home screen with rounds in progress and friends playing",
   },
   {
-    Icon: TargetIcon,
-    title: "Handicap",
-    rotate: "-rotate-1",
-    accent: "var(--fairway)",
-    description:
-      "Play with your real handicap. Every card adjusts for slope and rating on your tee, so gross and net scores are both right there, hole by hole.",
+    kicker: "Stats",
+    title: "Get to know your game.",
+    body: "Mulle shows where the shots go: par 3s, 4s and 5s, hard holes against easy ones, front nine against back. Add tee shots and putts when you want to go deeper.",
+    points: ["Strokes to par by hole type", "Bounce-back and penalties", "Tee shots, greens and putts"],
+    screen: screenStats,
+    alt: "Golf statistics in Mulle",
   },
 ];
 
-const steps = [
-  {
-    number: "1",
-    dot: "var(--pencil)",
-    title: "Create a round",
-    description: "Pick a course and tee, add up to 4 players.",
-  },
-  {
-    number: "2",
-    dot: "var(--tee)",
-    title: "Score hole by hole",
-    description: "Enter strokes as you play — Stableford points and totals update live.",
-  },
-  {
-    number: "3",
-    dot: "var(--fairway)",
-    title: "Finish & compete",
-    description: "Lock the card. It counts toward your tournament standings.",
-  },
-];
-
-function scoreMark(par: number, score: number) {
-  const diff = score - par;
-  if (diff <= -1) return "circle";
-  if (diff >= 1) return "square";
-  return "plain";
+function Check() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden className="shrink-0 mt-[3px]">
+      <circle cx="10" cy="10" r="10" fill="var(--fairway)" opacity="0.12" />
+      <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="var(--fairway)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 
 export default function Home() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section className="relative overflow-hidden ledger-bg">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24">
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-8"
-            style={{ color: "var(--pencil)" }}
-          >
-            ⛳ Golf Scoring, Kept Properly
-          </motion.p>
+      <section className="relative isolate overflow-hidden bg-fairway-dark text-white">
+        <Image src={aerial} alt="" fill preload sizes="100vw" className="object-cover -z-20 opacity-90" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(6,22,14,0.92)_0%,rgba(6,22,14,0.7)_45%,rgba(6,22,14,0.25)_100%)]" />
+        <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 -z-10 bg-gradient-to-b from-transparent to-[rgba(6,22,14,0.6)]" />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="font-logo font-bold leading-[0.85] tracking-tight -ml-1 flex items-baseline flex-wrap gap-x-4"
-            style={{ fontSize: "clamp(3.4rem, 13vw, 9rem)", color: "var(--ink)" }}
-          >
-            Mulle
-            <span style={{ fontSize: "0.34em", color: "var(--fairway)" }}>
-              Golf
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-32 sm:pt-40 pb-0 lg:pb-0 grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-8 items-end">
+          <div className="pb-4 lg:pb-32 hero-rise">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-md px-3.5 py-1.5 text-[13px] font-medium text-white/85">
+              <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+              The golf app for you and your friends
             </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-display italic max-w-xl mt-6 mb-14"
-            style={{
-              color: "var(--ink)",
-              fontSize: "clamp(1.4rem, 3.2vw, 2.1rem)",
-              fontOpticalSizing: "auto",
-            }}
-          >
-            Every round is a story worth keeping score of.
-          </motion.p>
-
-          {/* Mini scorecard strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="inline-block bg-paper-light p-4 sm:p-6 shadow-[6px_6px_0_var(--ink)]"
-            style={{ border: "2px solid var(--ink)", transform: "rotate(-1deg)" }}
-          >
-            <div className="grid grid-cols-[auto_repeat(9,1.9rem)] sm:grid-cols-[auto_repeat(9,2.4rem)] gap-y-1 font-mono text-[11px] sm:text-xs">
-              <span className="pr-4 text-ink-soft self-center">HOLE</span>
-              {scorecard.map((h) => (
-                <span key={h.hole} className="text-center text-ink-soft">
-                  {h.hole}
-                </span>
-              ))}
-
-              <span className="pr-4 text-ink-soft self-center">PAR</span>
-              {scorecard.map((h) => (
-                <span key={h.hole} className="text-center text-ink-soft">
-                  {h.par}
-                </span>
-              ))}
-
-              <span className="pr-4 self-center font-semibold" style={{ color: "var(--ink)" }}>
-                YOU
-              </span>
-              {scorecard.map((h) => {
-                const mark = scoreMark(h.par, h.score);
-                return (
-                  <span key={h.hole} className="flex items-center justify-center py-0.5">
-                    <span
-                      title={mark === "circle" ? "Birdie or better" : mark === "square" ? "Bogey or worse" : "Par"}
-                      className="relative inline-flex items-center justify-center w-6 h-6 font-semibold"
-                      style={{ color: "var(--ink)" }}
-                    >
-                      {mark === "circle" && (
-                        <span
-                          className="absolute inset-0 rounded-full"
-                          style={{ border: "1.5px solid var(--fairway)" }}
-                        />
-                      )}
-                      {mark === "square" && (
-                        <span
-                          className="absolute inset-0.5"
-                          style={{ border: "1.5px solid var(--pencil)" }}
-                        />
-                      )}
-                      {h.score}
-                    </span>
-                  </span>
-                );
-              })}
+            <h1 className="mt-7 font-display font-semibold tracking-[-0.04em] leading-[0.95] text-[clamp(3rem,7.4vw,5.6rem)]">
+              Every round,
+              <br />
+              <span className="text-lime">together.</span>
+            </h1>
+            <p className="mt-7 max-w-md text-lg sm:text-xl leading-relaxed text-white/75">
+              Score hole by hole, follow your friends live and run tournaments with your crew. Then see where the
+              shots really go.
+            </p>
+            <div className="mt-10">
+              <StoreButtons tone="light" />
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-14"
-          >
-            <motion.a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ rotate: 0, scale: 1.03 }}
-              className="inline-block font-mono font-semibold text-sm uppercase tracking-[0.15em] px-8 py-4"
-              style={{
-                background: "var(--fairway)",
-                color: "var(--paper-light)",
-                border: "2px solid var(--ink)",
-                transform: "rotate(-1.5deg)",
-                boxShadow: "4px 4px 0 var(--ink)",
-              }}
-            >
-              Download for iOS →
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Ticker ─────────────────────────────────────────── */}
-      <div
-        className="overflow-hidden py-4"
-        style={{ background: "var(--ink)", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}
-      >
-        <div className="marquee-track">
-          {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
-            <span
-              key={i}
-              className="font-display italic whitespace-nowrap px-6 text-lg sm:text-xl"
-              style={{ color: "var(--paper)" }}
-            >
-              {item} <span style={{ color: "var(--tee)" }}>✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Features as pinned notes ───────────────────────── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8">
-        <div className="max-w-5xl mx-auto">
-          <p
-            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-14"
-            style={{ color: "var(--ink-soft)" }}
-          >
-            What&apos;s in the bag
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
-            {notes.map(({ Icon, title, description, rotate, accent }, i) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ rotate: 0, scale: 1.02 }}
-                className={`${rotate} bg-paper-light p-8`}
-                style={{ border: "2px solid var(--ink)", boxShadow: "5px 5px 0 var(--ink)" }}
-              >
-                <div className="mb-5" style={{ color: accent }}>
-                  <Icon />
-                </div>
-                <h3 className="font-display font-semibold text-xl mb-3" style={{ color: "var(--ink)" }}>
-                  {title}
-                </h3>
-                <p className="text-sm leading-[1.75]" style={{ color: "var(--ink-soft)" }}>
-                  {description}
-                </p>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── How it works — the routing ─────────────────────── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8" style={{ borderTop: "2px solid var(--ink)" }}>
-        <div className="max-w-5xl mx-auto">
-          <p
-            className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] mb-16"
-            style={{ color: "var(--ink-soft)" }}
-          >
-            The routing
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-12 sm:gap-6 relative">
-            <div
-              aria-hidden
-              className="hidden sm:block absolute top-[10px] left-0 right-0 h-0"
-              style={{ borderTop: "2px dashed var(--rule)" }}
+          <div className="relative h-[460px] sm:h-[560px] lg:h-[640px] hero-rise [animation-delay:150ms]">
+            <Phone
+              screen={screenHome}
+              alt="The Mulle home screen"
+              preload
+              className="absolute left-1/2 lg:left-[8%] -translate-x-[78%] lg:translate-x-0 top-0 w-[230px] sm:w-[280px] lg:w-[300px] z-10"
             />
-            {steps.map(({ number, dot, title, description }, i) => (
-              <motion.div
-                key={number}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="relative flex-1"
-              >
-                <span
-                  aria-hidden
-                  className="relative z-10 inline-flex items-center justify-center w-5 h-5 rounded-full mb-6"
-                  style={{ background: dot, border: "2px solid var(--ink)" }}
-                />
-                <h3 className="font-display font-semibold text-2xl mb-3" style={{ color: "var(--ink)" }}>
-                  {title}
-                </h3>
-                <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--ink-soft)" }}>
-                  {description}
-                </p>
-              </motion.div>
-            ))}
+            <Phone
+              screen={screenBoard}
+              alt="A live leaderboard in Mulle"
+              className="absolute left-1/2 lg:left-auto lg:right-0 -translate-x-[8%] lg:translate-x-0 top-16 w-[210px] sm:w-[255px] lg:w-[275px] opacity-95"
+            />
           </div>
         </div>
+      </section>
+
+      {/* ── Intro ──────────────────────────────────────────── */}
+      <section className="px-5 sm:px-8 pt-28 sm:pt-36 pb-10">
+        <Reveal className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display font-semibold tracking-[-0.03em] leading-[1.05] text-[clamp(2rem,4.6vw,3.4rem)] text-ink">
+            Everything the round needs.
+            <span className="text-ink-soft"> Nothing it doesn&apos;t.</span>
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft max-w-xl mx-auto">
+            Mulle keeps the card, the leaderboard and the banter in one calm, fast app, so you can keep your eyes on
+            the game.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* ── Features ───────────────────────────────────────── */}
+      <section id="features" className="px-5 sm:px-8 pb-12 scroll-mt-20">
+        <div className="max-w-6xl mx-auto flex flex-col gap-8 sm:gap-10">
+          {features.map((feature, i) => {
+            const flip = i % 2 === 1;
+            return (
+              <Reveal key={feature.kicker}>
+                <article className="grid lg:grid-cols-2 items-center gap-10 lg:gap-16 rounded-[2rem] bg-paper-light ring-1 ring-rule/70 p-6 sm:p-10 lg:p-14 overflow-hidden">
+                  <div className={flip ? "lg:order-2" : ""}>
+                    <p className="text-sm font-semibold text-fairway">{feature.kicker}</p>
+                    <h3 className="mt-3 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-[clamp(1.9rem,3.6vw,2.8rem)] text-ink">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-5 text-[17px] leading-relaxed text-ink-soft max-w-md">{feature.body}</p>
+                    <ul className="mt-8 flex flex-col gap-3.5">
+                      {feature.points.map((point) => (
+                        <li key={point} className="flex gap-3 text-[15px] text-ink">
+                          <Check />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div
+                    className={`relative flex justify-center rounded-[1.5rem] overflow-hidden pt-10 sm:pt-14 -mb-6 sm:-mb-10 lg:-mb-14 bg-[radial-gradient(120%_90%_at_50%_0%,#2a7a4f_0%,#164a2f_55%,#0b2116_100%)] ${
+                      flip ? "lg:order-1" : ""
+                    }`}
+                  >
+                    <div aria-hidden className="absolute inset-0 opacity-[0.07] bg-[repeating-radial-gradient(circle_at_50%_120%,#fff_0,#fff_1px,transparent_1px,transparent_28px)]" />
+                    <Phone screen={feature.screen} alt={feature.alt} className="relative w-[240px] sm:w-[280px] translate-y-6" />
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Photo band ─────────────────────────────────────── */}
+      <section className="px-5 sm:px-8 py-12">
+        <Reveal className="max-w-6xl mx-auto">
+          <div className="relative isolate overflow-hidden rounded-[2rem] min-h-[460px] sm:min-h-[560px] flex items-end">
+            <Image src={fairway} alt="" fill sizes="(max-width: 1200px) 100vw, 1150px" className="object-cover object-[50%_62%] -z-20" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-[rgba(6,22,14,0.85)] via-[rgba(6,22,14,0.25)] to-transparent" />
+            <div className="p-8 sm:p-14 max-w-2xl">
+              <p className="font-display font-semibold tracking-[-0.03em] leading-[1.05] text-white text-[clamp(1.9rem,4vw,3.2rem)]">
+                From the first tee to the last putt, and the stories after.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* ── Download CTA ───────────────────────────────────── */}
-      <section
-        className="py-28 sm:py-36 px-6 text-center"
-        style={{ background: "var(--fairway)", borderTop: "2px solid var(--ink)" }}
-      >
-        <div className="max-w-2xl mx-auto">
-          <h2
-            className="font-display italic leading-[0.95] mb-12"
-            style={{ color: "var(--paper-light)", fontSize: "clamp(2.6rem, 7vw, 5rem)" }}
-          >
-            Ready for the
-            <br />
-            back nine?
+      <section className="px-5 sm:px-8 pt-12 pb-28 sm:pb-36">
+        <Reveal className="max-w-3xl mx-auto text-center flex flex-col items-center">
+          <Image src={mascot} alt="Mulle, the golf ball in a green cap" width={120} height={120} />
+          <h2 className="mt-8 font-display font-semibold tracking-[-0.035em] leading-[1.02] text-ink text-[clamp(2.2rem,5.4vw,4rem)]">
+            See you on the first tee.
           </h2>
-          <motion.a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ rotate: 0, scale: 1.04 }}
-            className="inline-block font-mono font-semibold text-sm uppercase tracking-[0.15em] px-8 py-4"
-            style={{
-              background: "var(--paper-light)",
-              color: "var(--fairway-dark)",
-              border: "2px solid var(--ink)",
-              transform: "rotate(1deg)",
-              boxShadow: "4px 4px 0 var(--ink)",
-            }}
-          >
-            Download on the App Store →
-          </motion.a>
-        </div>
+          <p className="mt-5 text-lg text-ink-soft">Free to download. Bring your friends.</p>
+          <div className="mt-10 flex justify-center">
+            <StoreButtons tone="dark" />
+          </div>
+        </Reveal>
       </section>
     </>
   );

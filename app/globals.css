@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
+/* The app's identity: deep course green, warm off-white, near-black ink. */
 :root {
-  --paper: #f3e9d2;
-  --paper-light: #fbf5e6;
-  --ink: #201b12;
-  --ink-soft: #6d6349;
-  --rule: #d9c99e;
-  --fairway: #1a6b3c;
-  --fairway-dark: #103a21;
-  --pencil: #bf4530;
+  --paper: #f6f4ee;
+  --paper-light: #ffffff;
+  --ink: #0f1a14;
+  --ink-soft: #5d6862;
+  --rule: #e4e1d8;
+  --fairway: #1f5c3b;
+  --fairway-dark: #0b2116;
+  --lime: #9bd34a;
+  --pencil: #c2462e;
   --tee: #d9a441;
 }
 
@@ -19,56 +21,77 @@
   --color-ink-soft: var(--ink-soft);
   --color-rule: var(--rule);
   --color-fairway: var(--fairway);
+  --color-fairway-dark: var(--fairway-dark);
+  --color-lime: var(--lime);
   --color-pencil: var(--pencil);
   --color-tee: var(--tee);
-  --font-display: var(--font-fraunces), "Fraunces", serif;
+  --font-display: var(--font-geist-sans), "Geist", sans-serif;
   --font-logo: var(--font-fredoka), "Fredoka", sans-serif;
   --font-sans: var(--font-geist-sans), "Geist", sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Faint ledger grid printed across the paper background */
-.ledger-bg {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 39px,
-    rgba(32, 27, 18, 0.06) 40px
-  );
-}
-
-/* Scanned-paper grain */
-.paper-grain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 26s linear infinite;
+::selection {
+  background: var(--lime);
+  color: var(--fairway-dark);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* The hero rises in on load; the rest of the page uses <Reveal> on scroll. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
     animation: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

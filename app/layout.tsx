@@ -1,26 +1,17 @@
 import type { Metadata } from "next";
-import { Fredoka, Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Fredoka, Geist } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { SiteHeader } from "@/app/components/site-header";
+import mascot from "@/public/img/mascot.png";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: "variable",
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
 });
 
 const fredoka = Fredoka({
@@ -31,8 +22,14 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   title: "Mulle Golf",
-  description: "Track rounds, run tournaments, and play with friends.",
+  description: "Score your rounds, follow friends live, run tournaments and get to know your game.",
 };
+
+const footerLinks = [
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+  { href: "/delete-account", label: "Delete account" },
+];
 
 export default function RootLayout({
   children,
@@ -40,65 +37,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${fredoka.variable} h-full`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${fredoka.variable} h-full`}>
       <Analytics />
       <SpeedInsights />
       <body className="min-h-full flex flex-col antialiased">
-        <header
-          className="sticky top-0 z-50 bg-paper"
-          style={{ borderBottom: "2px solid var(--ink)" }}
-        >
-          <div className="max-w-5xl mx-auto px-6 sm:px-8 py-5 flex items-center justify-between">
-            <Link
-              href="/"
-              className="font-logo font-bold text-ink text-xl -rotate-2 inline-block"
-            >
-              Mulle Golf
-            </Link>
-            <a
-              href="https://apps.apple.com/se/app/pinseeker-b6b384/id6761655301"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink border-b border-dashed border-ink pb-0.5 transition-colors hover:text-fairway hover:border-fairway"
-            >
-              Get the app ↗
-            </a>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main className="flex-1 bg-paper">{children}</main>
 
-        <footer
-          className="px-6 py-10 bg-paper"
-          style={{ borderTop: "2px solid var(--ink)" }}
-        >
-          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-soft">
-              Mulle Golf · Est. 2026 · Scored by hand, kept forever
-            </span>
-            <div className="flex gap-6 sm:gap-8">
-              <Link
-                href="/privacy"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
-              >
-                Privacy
-              </Link>
-              <Link
-                href="/terms"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
-              >
-                Terms
-              </Link>
-              <Link
-                href="/delete-account"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-fairway"
-              >
-                Delete account
-              </Link>
+        <footer className="bg-paper border-t border-rule">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2.5">
+              <Image src={mascot} alt="" width={28} height={28} />
+              <span className="font-logo font-bold text-lg text-ink">Mulle Golf</span>
+              <span className="text-sm text-ink-soft ml-2">© 2026</span>
             </div>
+            <nav className="flex gap-6 sm:gap-8">
+              {footerLinks.map(({ href, label }) => (
+                <Link key={href} href={href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                  {label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </footer>
       </body>
