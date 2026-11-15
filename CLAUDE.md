@@ -6,8 +6,9 @@ How Jakob (solo founder) and Claude work on Mulle — the full version is in `mu
 `CLAUDE.md`; the essentials:
 
 - **Language.** Answer Jakob in Swedish; code, comments, commits, PRs and issues in English.
-- **Issues are the backlog**, all in `jkberiksson/mulle-app` — also for this repo. Picking
-  something up: read the issue (`gh issue view N -R jkberiksson/mulle-app`) first. Something
+- **Issues are the backlog**, each in the repo it belongs to — this repo's in
+  `jkberiksson/mulle-web`, the app's in `mulle-app`. Picking something up: read the issue
+  (`gh issue view N`) first. Something
   new comes up: suggest an issue, create it when Jakob agrees (`## Why` / `## What` /
   `## Out of scope` / `## Open questions`; labels `enhancement`/`bug`, `area:*`, `size:*`,
   `idea` while undecided). Don't merge, split or phase issues unless asked.
